@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional portfolio of Mrunali Kamdi, M.Pharm in Pharmaceutics, with interests in formulation development, pharmaceutical R&D, QA and QC.">
+  <title>Mrunali Kamdi | Pharmaceutical Sciences Portfolio</title>
+  <style>
+    :root{
+      --navy:#102a43; --blue:#176b87; --teal:#16a6a1; --pale:#eef8f8;
+      --ink:#243746; --muted:#607586; --white:#fff; --line:#dce7ec;
+      --shadow:0 14px 40px rgba(16,42,67,.09);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);line-height:1.65;background:#fbfdfe}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{width:min(1100px,91%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{font-weight:800;letter-spacing:-.03em;color:var(--navy);font-size:1.12rem}
+    .brand span{color:var(--teal)}
+    .navlinks{display:flex;gap:22px;align-items:center;font-size:.92rem}
+    .navlinks a{color:var(--ink);font-weight:600}
+    .menu{display:none;border:0;background:transparent;font-size:1.6rem;color:var(--navy)}
+    .hero{padding:88px 0 76px;background:radial-gradient(circle at 86% 18%,#d8f3f0 0,transparent 28%),linear-gradient(130deg,#f4fbfc,#fff 65%)}
+    .hero-grid{display:grid;grid-template-columns:1.45fr .75fr;gap:55px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:30px;background:#e3f6f4;color:#126c70;font-weight:750;font-size:.82rem;letter-spacing:.03em}
+    h1{font-size:clamp(2.6rem,5vw,4.45rem);line-height:1.07;letter-spacing:-.055em;color:var(--navy);margin:22px 0 18px}
+    h1 span{color:var(--blue)}
+    .lead{font-size:1.15rem;max-width:670px;color:#496274}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;padding:12px 19px;border-radius:9px;font-weight:750;border:1px solid var(--blue);transition:.2s}
+    .btn.primary{background:var(--blue);color:white}
+    .btn.secondary{color:var(--blue);background:white}
+    .btn:hover{transform:translateY(-2px);text-decoration:none;box-shadow:var(--shadow)}
+    .profile-card{background:white;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow);position:relative}
+    .monogram{height:92px;width:92px;border-radius:24px;background:linear-gradient(135deg,var(--navy),var(--teal));display:grid;place-items:center;color:white;font-size:2rem;font-weight:850;letter-spacing:-.05em;margin-bottom:20px}
+    .profile-card h2{font-size:1.22rem;color:var(--navy);margin:0 0 4px}
+    .profile-card p{margin:0;color:var(--muted);font-size:.95rem}
+    .mini-line{height:1px;background:var(--line);margin:20px 0}
+    .profile-fact{display:flex;gap:11px;margin:12px 0;font-size:.92rem}
+    .profile-fact b{color:var(--navy);min-width:90px}
+    section{padding:76px 0}
+    section.alt{background:#f3f8fa}
+    .section-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--teal);font-weight:850}
+    h2.section-title{font-size:clamp(1.9rem,3.4vw,2.65rem);line-height:1.15;letter-spacing:-.04em;color:var(--navy);margin:8px 0 18px}
+    .intro{max-width:760px;color:var(--muted);font-size:1.03rem}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:start;margin-top:28px}
+    .panel{background:white;border:1px solid var(--line);border-radius:16px;padding:25px;box-shadow:0 6px 24px rgba(16,42,67,.04)}
+    .panel h3{margin:0 0 10px;color:var(--navy)}
+    .focus-list{display:grid;gap:12px}
+    .focus-item{padding:13px 15px;border-radius:10px;background:var(--pale);border-left:3px solid var(--teal)}
+    .focus-item strong{display:block;color:var(--navy)}
+    .focus-item span{font-size:.91rem;color:var(--muted)}
+    .project-card{margin-top:30px;display:grid;grid-template-columns:.8fr 1.2fr;gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white;box-shadow:var(--shadow)}
+    .project-side{padding:32px;background:linear-gradient(150deg,#102a43,#176b87);color:white}
+    .project-side .tag{display:inline-block;padding:5px 9px;border:1px solid rgba(255,255,255,.35);border-radius:30px;font-size:.78rem;margin:0 5px 8px 0}
+    .project-side h3{font-size:1.55rem;line-height:1.25;margin:18px 0 12px}
+    .project-side p{color:#dcecf2;font-size:.94rem}
+    .project-body{padding:32px}
+    .project-body h4{margin:0 0 8px;color:var(--navy)}
+    .project-body p{color:var(--muted);margin-top:0}
+    .project-body ul{padding-left:20px;color:var(--muted)}
+    .notice{font-size:.84rem;color:#637b88;background:#f1f7f8;border-radius:9px;padding:12px 14px;margin-top:16px}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:30px}
+    .skill-card{padding:22px;border:1px solid var(--line);background:white;border-radius:15px}
+    .skill-icon{width:42px;height:42px;border-radius:12px;background:#e3f6f4;color:#126c70;display:grid;place-items:center;font-weight:900;font-size:1.1rem;margin-bottom:14px}
+    .skill-card h3{font-size:1.04rem;color:var(--navy);margin:0 0 7px}
+    .skill-card p{font-size:.93rem;color:var(--muted);margin:0}
+    .education{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+    .edu-card{border:1px solid var(--line);border-radius:15px;padding:23px;background:white}
+    .edu-card .degree{font-weight:800;color:var(--navy);font-size:1.08rem}
+    .edu-card .school{color:var(--muted)}
+    .edu-card .year{display:inline-block;margin-top:12px;color:#126c70;background:#e3f6f4;padding:4px 9px;border-radius:20px;font-size:.83rem;font-weight:750}
+    .contact-box{margin-top:28px;padding:32px;border-radius:20px;background:linear-gradient(120deg,#102a43,#176b87);color:white;display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .contact-box h3{font-size:1.6rem;margin:0 0 8px}
+    .contact-box p{color:#dcecf2;margin:0;max-width:650px}
+    .contact-box .btn{background:white;color:var(--navy);border-color:white;white-space:nowrap}
+    footer{padding:26px 0;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+    footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:780px){
+      .hero{padding:60px 0}.hero-grid,.about-grid,.project-card{grid-template-columns:1fr;gap:25px}
+      .profile-card{max-width:480px}.skills-grid{grid-template-columns:1fr 1fr}.education{grid-template-columns:1fr}
+      .navlinks{display:none;position:absolute;left:0;right:0;top:72px;background:white;padding:18px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+      .navlinks.open{display:flex}.menu{display:block}.contact-box{align-items:flex-start;flex-direction:column}
+    }
+    @media(max-width:480px){.skills-grid{grid-template-columns:1fr}.profile-fact{display:block}.profile-fact b{display:block;margin-bottom:2px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#home">MK<span>.</span> Portfolio</a>
+    <button class="menu" aria-label="Open navigation" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#project">Research Project</a><a href="#skills">Skills</a><a href="#training">Training</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">PHARMACEUTICAL SCIENCES · M.PHARM</div>
+        <h1>Mrunali <span>Kamdi</span></h1>
+        <p class="lead">M.Pharm in Pharmaceutics with an academic research background in extended-release floating pellets. Interested in pharmaceutical R&amp;D, formulation development, analytical development, Quality Assurance and Quality Control.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#project">Explore Research Project</a>
+          <a class="btn secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="monogram">MK</div>
+        <h2>Professional Profile</h2>
+        <p>Pharmaceutics · Formulation Development · Quality</p>
+        <div class="mini-line"></div>
+        <div class="profile-fact"><b>Qualification</b><span>Master of Pharmacy (Pharmaceutics)</span></div>
+        <div class="profile-fact"><b>University</b><span>Rashtrasant Tukadoji Maharaj Nagpur University</span></div>
+        <div class="profile-fact"><b>Research</b><span>Extended-release floating pellets of Lurasidone Hydrochloride</span></div>
+        <div class="profile-fact"><b>Location</b><span>Maharashtra, India · Open to suitable opportunities</span></div>
+        <div class="profile-fact"><b>Email</b><span>mrunalikamdi2002@gmail.com</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-label">About me</div>
+      <h2 class="section-title">Research-minded. Quality-focused. Ready to learn.</h2>
+      <p class="intro">I have completed my Master of Pharmacy in Pharmaceutics at Dadasaheb Balpande College of Pharmacy, affiliated with Rashtrasant Tukadoji Maharaj Nagpur University. My postgraduate research focused on developing, optimizing and characterizing an extended-release floating pellet formulation. I am looking to build my career in the pharmaceutical industry and contribute to formulation development, analytical work and quality-driven processes.</p>
+      <div class="about-grid">
+        <div class="panel">
+          <h3>Career objective</h3>
+          <p>To begin a pharmaceutical industry career in an entry-level R&amp;D, formulation development, analytical development, QA or QC role, applying my academic foundation while developing practical laboratory, documentation and GMP-compliance skills.</p>
+          <p style="margin-bottom:0;color:#607586">I value scientific accuracy, careful documentation, teamwork and continuous learning.</p>
+        </div>
+        <div class="focus-list">
+          <div class="focus-item"><strong>Formulation development</strong><span>Dosage-form design, formulation variables and optimization concepts.</span></div>
+          <div class="focus-item"><strong>Modified drug delivery</strong><span>Extended-release and gastro-retentive floating pellet systems.</span></div>
+          <div class="focus-item"><strong>Quality and analytical work</strong><span>Interest in analytical testing, documentation and pharmaceutical quality systems.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="project">
+    <div class="wrap">
+      <div class="section-label">Academic research</div>
+      <h2 class="section-title">Featured postgraduate project</h2>
+      <p class="intro">A research project focused on modified drug delivery and controlled-release formulation design.</p>
+      <article class="project-card">
+        <div class="project-side">
+          <span class="tag">M.Pharm Dissertation</span><span class="tag">Pharmaceutics</span>
+          <h3>Development, Optimization and Characterization of Extended-Release Floating Pellets of Lurasidone Hydrochloride</h3>
+          <p>Postgraduate research completed at Dadasaheb Balpande College of Pharmacy, Besa, Nagpur, during 2025–2026.</p>
+        </div>
+        <div class="project-body">
+          <h4>Research focus</h4>
+          <p>Development, optimization and characterization of extended-release floating pellets of Lurasidone Hydrochloride, including formulation and process optimization and evaluation of release and absorption behaviour.</p>
+          <h4>Areas explored</h4>
+          <ul>
+            <li>Formulated pellets using the extrusion–spheronization technique and coated them using a fluidized bed processor (FBP).</li>
+            <li>Applied Design of Experiments (DoE) for formulation and process optimization.</li>
+            <li>Developed and validated a bioanalytical method using spectrofluorometry.</li>
+            <li>Conducted in-vitro drug release and in-vivo absorption work and assessed in-vitro–in-vivo correlation (IVIVC).</li>
+          </ul>
+          <div class="notice"><strong>Project integrity:</strong> Add only results, instruments and methods you personally performed or can confidently explain during an interview. A full thesis or poster can be linked here once you choose which document to share publicly.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-label">Professional capabilities</div>
+      <h2 class="section-title">Areas of knowledge</h2>
+      <p class="intro">A concise overview of relevant academic and career interests. Keep only skills you can discuss confidently in an interview.</p>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-icon">R&amp;D</div><h3>Formulation R&amp;D</h3><p>Dosage-form development, pellet formulation, optimization principles and modified drug delivery.</p></div>
+        <div class="skill-card"><div class="skill-icon">AD</div><h3>Analytical Techniques</h3><p>HPLC, UV-visible spectrophotometry, spectrofluorometry, dissolution testing and pH measurement.</p></div>
+        <div class="skill-card"><div class="skill-icon">QA</div><h3>Quality Assurance</h3><p>GMP, SOPs, documentation, deviations and CAPA concepts; practical exposure to be specified accurately.</p></div>
+        <div class="skill-card"><div class="skill-icon">QC</div><h3>Quality Control</h3><p>Pharmaceutical testing principles, assay concepts, analytical data review and laboratory documentation.</p></div>
+        <div class="skill-card"><div class="skill-icon">DoE</div><h3>Formulation Optimization</h3><p>Design of Experiments (DoE), Design-Expert® and formulation/process optimization concepts.</p></div>
+        <div class="skill-card"><div class="skill-icon">SW</div><h3>Software & Communication</h3><p>Design-Expert®, Microsoft Office, scientific communication, analytical thinking and teamwork.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="training">
+    <div class="wrap">
+      <div class="section-label">Professional development</div>
+      <h2 class="section-title">Conferences, presentations & training</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-icon">P</div><h3>Poster Presentation</h3><p>24th International E-Symposium on Advances in Technology and Business Potential of New Drug Delivery Systems, CRS Indian Local Chapter · February 2026.</p></div>
+        <div class="skill-card"><div class="skill-icon">P</div><h3>Healthcare & Technology Summit</h3><p>Poster presentation at the CSIR-sponsored 2nd DMCP-DMIHER Healthcare and Technology Summit on Innovations in Herbal Formulations · October–November 2025.</p></div>
+        <div class="skill-card"><div class="skill-icon">47h</div><h3>Drug Delivery Training</h3><p>“From Bench to Breakthrough: Screening Methods in Drug Delivery” · 47 hours, Dadasaheb Balpande College of Pharmacy · August 2025.</p></div>
+        <div class="skill-card"><div class="skill-icon">AMR</div><h3>AMR Stewardship Drive</h3><p>AMR Stewardship Drive 2025 – Building Partnerships for Strengthening Our Response to AMR, Nagpur · August 2025.</p></div>
+        <div class="skill-card"><div class="skill-icon">NC</div><h3>National Conference</h3><p>Breakthrough and Advancement in Drug Delivery Systems, Anurag College of Pharmacy · February 2025.</p></div>
+        <div class="skill-card"><div class="skill-icon">IPC</div><h3>Indian Pharmaceutical Congress</h3><p>Poster presentation at the 73rd Indian Pharmaceutical Congress · July 2024.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="education">
+    <div class="wrap">
+      <div class="section-label">Education</div>
+      <h2 class="section-title">Academic background</h2>
+      <div class="education">
+        <div class="edu-card">
+          <div class="degree">Master of Pharmacy (M.Pharm)</div>
+          <div class="school">Specialization: Pharmaceutics<br>Dadasaheb Balpande College of Pharmacy, Nagpur<br>Rashtrasant Tukadoji Maharaj Nagpur University<br>CGPA: 8.59</div>
+          <span class="year">2026</span>
+        </div>
+        <div class="edu-card">
+          <div class="degree">Bachelor of Pharmacy (B.Pharm)</div>
+          <div class="school">Nagpur College of Pharmacy, Nagpur<br>CGPA: 8.30</div>
+          <span class="year">2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let’s connect professionally</h2>
+      <p class="intro">I welcome opportunities suitable for an M.Pharm fresher in pharmaceutical R&amp;D, formulation development, analytical development, QA and QC.</p>
+      <div class="contact-box">
+        <div>
+          <h3>Interested in my profile?</h3>
+          <p>For recruitment enquiries, please connect by email or LinkedIn. Replace the sample links below with your real professional contact details before publishing.</p>
+        </div>
+        <a class="btn" href="mailto:mrunalikamdi2002@gmail.com">Email Me</a>
+      </div>
+      <p style="margin-top:20px;color:#607586;font-size:.94rem">
+        <strong>Phone:</strong> +91 70587 85977 &nbsp;·&nbsp; <strong>Email:</strong> mrunalikamdi2002@gmail.com &nbsp;·&nbsp;
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mrunali-kamdi-121006259" target="_blank" rel="noopener">linkedin.com/in/mrunali-kamdi-121006259</a>
+        &nbsp;·&nbsp; <strong>CV:</strong> Add a link to your PDF CV after uploading it.
+      </p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© 2026 Mrunali Kamdi · Professional Portfolio</span><span>Pharmaceutical Sciences | Formulation &amp; Quality</span></div></footer>
+</body>
+</html>
